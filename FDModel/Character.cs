@@ -23,7 +23,7 @@ namespace FDModel
 		public int Stun { get; set; }
 		public int ForwardDash { get; set; }
 		public int BackDash { get; set; }
-		public Uri CharacterPicture { get; set; }
+		public string CharacterPicture { get; set; }
 
 		// Foreign keys from Character
 		public virtual ICollection<Move> Moves { get; set; }
