@@ -37,11 +37,9 @@ namespace FDManager
 				CharacterPicture = characterPicture
 			};
 
-			using (var db = new FrameDataContext())
-			{
-				db.Characters.Add(newCharacter);
-				db.SaveChanges();
-			}
+			using var db = new FrameDataContext();
+			db.Characters.Add(newCharacter);
+			db.SaveChanges();
 		}
 
 		/// <summary>
@@ -52,10 +50,8 @@ namespace FDManager
 		/// </returns>
 		public List<Character> RetrieveAllCharacters()
 		{
-			using (var db = new FrameDataContext())
-			{
-				return db.Characters.ToList();
-			}
+			using var db = new FrameDataContext();
+			return db.Characters.ToList();
 		}
 
 		/// <summary>

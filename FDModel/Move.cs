@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FDModel
+﻿namespace FDModel
 {
 	public partial class Move
 	{
@@ -18,7 +16,7 @@ namespace FDModel
 		public int OnHit { get; set; }
 		public int Damage { get; set; }
 		public int Stun { get; set; }
-		public string CharacterPicture { get; set; }
+		public string MovePicture { get; set; }
 
 		// Foreign key
 		public virtual Character Character { get; set; }
