@@ -1,0 +1,359 @@
+﻿<Window x:Class="FDWPF.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+        Title="Street Fighter V Frame Data Application"
+		Height="550"
+		Width="800">
+
+	<Border Padding="10"
+			Background="#1F0B04">
+		<TabControl Background="#F48728"
+					TabStripPlacement="Bottom">
+			<TabItem Header="Frame Data">
+				<StackPanel>
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Text="Select Character:"
+								   Grid.Column="0"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="SelectCharacterComboBox"
+								  Grid.Column="1"
+								  Background="#E4DFAF"
+								  SelectionChanged="SelectCharacterComboBox_SelectionChanged" />
+
+						<TextBlock Text="Select Move:"
+								   Grid.Column="2"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="SelectMoveComboBox"
+								  Grid.Column="3"
+								  Background="#E4DFAF"
+								  SelectionChanged="SelectMoveComboBox_SelectionChanged" />
+					</Grid>
+
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<Image Name="FrameDataPicture"
+							   Margin="10"
+							   Grid.Column="0" />
+
+						<StackPanel Grid.Column="1">
+							<TextBlock x:Name="QuoteTextBlock"
+									   Text=""
+									   Grid.Column="0"
+									   TextAlignment="Center"
+									   VerticalAlignment="Center"
+									   FontWeight="Bold"
+									   FontSize="18"
+									   Margin="10" />
+
+							<TextBlock Text="Character Stats:"
+									   Grid.Column="0"
+									   VerticalAlignment="Center"
+									   Margin="50 10 0 0" />
+
+							<Grid Margin="10">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+
+								<TextBlock Text="Health:"
+										   Grid.Column="0"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="HealthTextBox"
+										 Grid.Column="1"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+								<TextBlock Text="Stun:"
+										   Grid.Column="2"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="StunTextBox"
+										 Grid.Column="3"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+							</Grid>
+
+							<Grid Margin="10">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+
+								<TextBlock Text="Forward Dash"
+										   Grid.Column="0"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="ForwardDashTextBox"
+										 Grid.Column="1"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+								<TextBlock Text="Back Dash"
+										   Grid.Column="2"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="BackDashTextBox"
+										 Grid.Column="3"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+							</Grid>
+
+							<Separator Margin="10"
+									   Background="#1F0B04">
+								<Separator.RenderTransform>
+									<ScaleTransform ScaleY="3" />
+								</Separator.RenderTransform>
+							</Separator>
+
+							<TextBlock Text="Move Frame Data:"
+									   Grid.Column="0"
+									   VerticalAlignment="Center"
+									   Margin="50 10 0 0" />
+
+							<Grid Margin="10">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition />
+									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition />
+									<ColumnDefinition Width="0.5*" />
+								</Grid.ColumnDefinitions>
+
+								<TextBlock Text="StartUp"
+										   Grid.Column="0"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="StartUpTextBox"
+										 Grid.Column="1"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+								<TextBlock Text="Active"
+										   Grid.Column="2"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="ActiveTextBox"
+										 Grid.Column="3"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+								<TextBlock Text="Recovery"
+										   Grid.Column="4"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="RecoveryTextBox"
+										 Grid.Column="5"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+							</Grid>
+
+							<Grid Margin="10">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+
+								<TextBlock Text="On Block"
+										   Grid.Column="0"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="OnBlockTextBox"
+										 Grid.Column="1"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+								<TextBlock Text="On Hit"
+										   Grid.Column="2"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="OnHitTextBox"
+										 Grid.Column="3"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+							</Grid>
+
+							<Grid Margin="10">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+
+								<TextBlock Text="Damage"
+										   Grid.Column="0"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="DamageTextBox"
+										 Grid.Column="1"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+								<TextBlock Text="Stun Damage"
+										   Grid.Column="2"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center" />
+
+								<TextBox x:Name="StunDamageTextBox"
+										 Grid.Column="3"
+										 IsReadOnly="True"
+										 Background="#9A863A"
+										 TextAlignment="Center"
+										 FontWeight="Bold" />
+
+
+							</Grid>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+			</TabItem>
+
+			<TabItem Header="Punishment Tool">
+				<StackPanel>
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Text="Opponent's Character:"
+								   Grid.Column="0"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="OpponentCharacterComboBox"
+								  Grid.Column="1"
+								  Background="#E4DFAF"
+								  SelectionChanged="OpponentCharacterComboBox_SelectionChanged"/>
+						
+						<TextBlock Text="Your Character:"
+								   Grid.Column="2"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="YourCharacterComboBox"
+								  Grid.Column="3"
+								  Background="#E4DFAF"
+								  SelectionChanged="YourCharacterComboBox_SelectionChanged"/>
+					</Grid>
+
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Text="The Move You Blocked:"
+								   Grid.Column="0"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="TheirMoveComboBox"
+								  Grid.Column="1"
+								  Background="#E4DFAF"
+								  SelectionChanged="TheirMoveComboBox_SelectionChanged"/>
+
+						<TextBlock Text="Moves You Can Punish With:"
+								   Grid.Column="2"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="MovesYouCanPunishWithComboBox"
+								  Grid.Column="3"
+								  Background="#E4DFAF"
+								  SelectionChanged="MovesYouCanPunishWithComboBox_SelectionChanged"/>
+					</Grid>
+
+					<Grid Margin="15">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+
+						<Image Name="TheirMovePicture"
+							   Margin="20"
+							   Grid.Column="0"/>
+
+						<Image Name="MoveYouCanPunishWithPicture"
+							   Margin="20"
+							   Grid.Column="1"
+							   RenderTransformOrigin="0.5, 0.5">
+							<Image.RenderTransform>
+								<ScaleTransform ScaleX="-1"/>
+							</Image.RenderTransform>
+						</Image>
+
+					</Grid>
+
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+	</Border>
+</Window>
