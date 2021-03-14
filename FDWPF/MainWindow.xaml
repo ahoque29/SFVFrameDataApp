@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		mc:Ignorable="d"
         Title="Street Fighter V Frame Data Application"
-		Height="450"
+		Height="550"
 		Width="800">
 
 	<Border Padding="10"
@@ -264,6 +264,94 @@
 							</Grid>
 						</StackPanel>
 					</Grid>
+				</StackPanel>
+			</TabItem>
+
+			<TabItem Header="Punishment Tool">
+				<StackPanel>
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Text="Opponent's Character:"
+								   Grid.Column="0"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="OpponentCharacterComboBox"
+								  Grid.Column="1"
+								  Background="#E4DFAF"
+								  SelectionChanged="OpponentCharacterComboBox_SelectionChanged"/>
+						
+						<TextBlock Text="Your Character:"
+								   Grid.Column="2"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="YourCharacterComboBox"
+								  Grid.Column="3"
+								  Background="#E4DFAF"
+								  SelectionChanged="YourCharacterComboBox_SelectionChanged"/>
+					</Grid>
+
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Text="The Move You Blocked:"
+								   Grid.Column="0"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="TheirMoveComboBox"
+								  Grid.Column="1"
+								  Background="#E4DFAF"
+								  SelectionChanged="TheirMoveComboBox_SelectionChanged"/>
+
+						<TextBlock Text="Moves You Can Punish With:"
+								   Grid.Column="2"
+								   TextAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontWeight="Bold" />
+
+						<ComboBox x:Name="MovesYouCanPunishWithComboBox"
+								  Grid.Column="3"
+								  Background="#E4DFAF"
+								  SelectionChanged="MovesYouCanPunishWithComboBox_SelectionChanged"/>
+					</Grid>
+
+					<Grid Margin="15">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+
+						<Image Name="TheirMovePicture"
+							   Margin="20"
+							   Grid.Column="0"/>
+
+						<Image Name="MoveYouCanPunishWithPicture"
+							   Margin="20"
+							   Grid.Column="1"
+							   RenderTransformOrigin="0.5, 0.5">
+							<Image.RenderTransform>
+								<ScaleTransform ScaleX="-1"/>
+							</Image.RenderTransform>
+						</Image>
+
+					</Grid>
+
 				</StackPanel>
 			</TabItem>
 		</TabControl>
