@@ -1,7 +1,7 @@
 ﻿using FDModel;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+
 
 namespace FDManager
 {
@@ -20,6 +20,7 @@ namespace FDManager
 		/// <param name="stun"></param>
 		/// <param name="movePicture"></param>
 		public void CreateMove(int characterId,
+			string moveName,
 			int startUp,
 			int active,
 			int recovery,
@@ -30,8 +31,9 @@ namespace FDManager
 			string movePicture)
 		{
 			var newMove = new Move()
-			{
+			{				
 				CharacterId = characterId,
+				MoveName = moveName,
 				StartUp = startUp,
 				Active = active,
 				Recovery = recovery,

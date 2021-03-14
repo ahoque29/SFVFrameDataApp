@@ -14,4 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pictures\CharacterPictures\" />
+    <Folder Include="Pictures\MovePictures\" />
+  </ItemGroup>
+
 </Project>
