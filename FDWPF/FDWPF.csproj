@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FDManager\FDManager.csproj" />
+  </ItemGroup>
+
 </Project>

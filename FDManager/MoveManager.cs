@@ -7,6 +7,8 @@ namespace FDManager
 {
 	public class MoveManager
 	{
+		public Move SelectedMove { get; set; }
+
 		/// <summary>
 		/// Creates a new move and saves it to the database
 		/// </summary>
@@ -61,6 +63,15 @@ namespace FDManager
 			var moveList = db.Moves.Where(m => m.CharacterId == characterId).ToList();
 
 			return moveList;
+		}
+
+		/// <summary>
+		/// Sets the selected object as the Move
+		/// </summary>
+		/// <param name="selectedMove"></param>
+		public void SetSelectedMove(object selectedMove)
+		{
+			SelectedMove = (Move)selectedMove;
 		}
 	}
 }

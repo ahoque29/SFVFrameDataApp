@@ -9,8 +9,8 @@ namespace FDManager
 	{
 		private static void Main(string[] args)
 		{
-			var _characterManager = new CharacterManager();
-			var _moveManager = new MoveManager();
+			//var _characterManager = new CharacterManager();
+			//var _moveManager = new MoveManager();
 
 			//// Adding Ryu
 			//_characterManager.CreateCharacter("Ryu",
@@ -20,6 +20,13 @@ namespace FDManager
 			//	16,
 			//	21,
 			//	"FDModel/Pictures/CharacterPictures/Ryu.png");
+
+			//// modifying ryu picture
+			//using var db = new FrameDataContext();
+			//var character = db.Characters.Where(c => c.CharacterId == 1).FirstOrDefault();
+			//character.CharacterPicture = @"C:\Users\gaffi\source\repos\SFVFrameDataApp\FDModel\Pictures\CharacterPictures\Ryu.png";
+
+			//db.SaveChanges();
 
 			// Adding s.LP
 			//_moveManager.CreateMove(1,
@@ -35,6 +42,15 @@ namespace FDManager
 
 			//// Adding c.HP
 			//_moveManager.CreateMove(1, "c.HP", 6, 4, 24, -10, -7, 90, 150, "C:/Users/gaffi/source/repos/SFVFrameDataApp/FDModel/Pictures/MovePicture/Ryu_cHP.png");
+
+			////modifying c.hp picture
+			//using (var db = new FrameDataContext())
+			//{
+			//	var move = db.Moves.Where(m => m.MoveId == 2).FirstOrDefault();
+			//	move.MovePicture = @"C:\Users\gaffi\source\repos\SFVFrameDataApp\FDModel\Pictures\MovePictures\Ryu_cHP.png";
+
+			//	db.SaveChanges();
+			//}
 
 			//// Adding Ken
 			//_characterManager.CreateCharacter("Ken",
